@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       create: (context) => MyAppState(),
       child: MaterialApp(
         title: 'Namer App',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
@@ -75,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           SafeArea(
             child: NavigationRail(
-              extended: false,
+              extended: MediaQuery.of(context).size.width >= 600, // Adjust the threshold as needed
               destinations: [
                 NavigationRailDestination(
                   icon: Icon(Icons.home),
